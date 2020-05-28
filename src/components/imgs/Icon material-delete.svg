@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13.611" height="17.5" viewBox="0 0 13.611 17.5">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.262" y1="0.101" x2="0.5" y2="0.585" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f83e3e"/>
+      <stop offset="1" stop-color="#d9435f"/>
+    </linearGradient>
+  </defs>
+  <path id="Icon_material-delete" data-name="Icon material-delete" d="M8.472,20.056A1.95,1.95,0,0,0,10.417,22h7.778a1.95,1.95,0,0,0,1.944-1.944V8.389H8.472ZM21.111,5.472h-3.4L16.736,4.5H11.875l-.972.972H7.5V7.417H21.111Z" transform="translate(-7.5 -4.5)" fill="url(#linear-gradient)"/>
+</svg>
