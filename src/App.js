@@ -57,12 +57,16 @@ class App extends React.Component{
                         msg:response.msg,
                         user_data:response.user_data
                     })
+                    console.log(this.state.user_data)
                     localStorage.setItem('logged',response.logged)
                     localStorage.setItem('username',this.state.user_data.map(result=>{return   result.username}))
                     localStorage.setItem('url',this.state.user_data.map(result=>{return   result.url}))
                     localStorage.setItem('user_id',this.state.user_data.map(result=>{return result.id}))
-                    this.setState({logged:localStorage.getItem('logged')})
-
+                    localStorage.setItem('description',this.state.user_data.map(result=>{return result.description}))
+                    localStorage.setItem('duo',this.state.user_data.map(result=>{return result.duo}))
+                    localStorage.setItem('elo',this.state.user_data.map(result=>{return result.elo}))
+                    localStorage.setItem('lane1',this.state.user_data.map(result=>{return result.lane1}))
+                    localStorage.setItem('lane2',this.state.user_data.map(result=>{return result.lane2}))
                 })
 
             }else{

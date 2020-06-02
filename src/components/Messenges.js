@@ -19,21 +19,21 @@ class Messenges extends React.Component{
       componentDidUpdate(prevProps,prevState,snapshot)
        {
            console.log('tried to update')
-           //You may call setState() immediately in componentDidUpdate() but note that it must be wrapped in a condition
+
            if(prevProps.channel_selected.id !== this.props.channel_selected.id)
            {
                console.log('prev ', prevProps.channel_selected.id,' this prop: ',this.props.channel_selected.id)
-             /*  this.setState({msg_body:[]})
+               this.setState({msg_body:[]})
                var chat
                if(this.props.private_text_selected)
                {
                     chat='pvt_msg'+this.props.channel_selected.id
                }else {
                 chat=this.props.channel_selected.id
-               }*/
+               }
                socket.off(prevProps.channel_selected.id);
 
-        socket.on(this.props.channel_selected.id,(data)=>
+        socket.on(chat,(data)=>
             {    console.log('receives broad cast on:',this.props.channel_selected.id)
 
                 this.setState(prevState => ({

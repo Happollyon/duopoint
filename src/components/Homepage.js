@@ -31,10 +31,6 @@ class Homepage extends React.Component{
             return this.props.keepLogged()
 
         }
-    componentDidMount()
-    {
-
-    }
 
 
     resetList(){

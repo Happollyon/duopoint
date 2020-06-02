@@ -19,7 +19,7 @@ class Search extends React.Component{
         {
             this.setState({search_class:'selected'})
             document.getElementById('create-chanel').style.display='none'
-            document.getElementById('search-result').style.background='rgba(250, 250, 250, 0.32)'
+            document.getElementById('search-result').classList.add('visible')
         }
 
 
@@ -32,7 +32,7 @@ class Search extends React.Component{
                 {
                     // Clicked in box
                 } else{
-                    document.getElementById('search-result').style.background='transparent';
+                    document.getElementById('search-result').classList.replace('visible','invisible');
                     document.getElementById('create-chanel').style.display='flex';
                     this.setState({search_class:''})
                 }

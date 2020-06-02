@@ -3,6 +3,9 @@ import Chanel_item from "./Chanel_item";
 class Search_result extends React.Component{
     constructor(props) {
         super(props);
+        this.state={
+            search_result_class:''
+        }
         this.addChanel=this.addChanel.bind(this)
         this.addfriend=this.addfriend.bind(this)
 
@@ -14,7 +17,7 @@ class Search_result extends React.Component{
         fetch(url,{method:'POST'}).then(response=>{
             if(response.status===200)
             {
-                alert(1)
+
                 this.props.resetList()
             }
         })
