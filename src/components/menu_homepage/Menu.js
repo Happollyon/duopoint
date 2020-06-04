@@ -1,10 +1,10 @@
 import React from "react";
 import Profile from "./Profile";
 import Channel from "./Channel";
-import ChanelList from "../ChanelList";
+import ChanelList from "../../ChanelList";
 import Newchanel from "./Newchanel";
-import Menu_spand from "./Menu_spand";
-import ChangePic from "./Menu/ChangePic";
+import Menu_spand from "../Menu/Menu_spand";
+import ChangePic from "../Menu/ChangePic";
 class Menu extends React.Component{
     constructor(props)
     {
@@ -52,7 +52,7 @@ class Menu extends React.Component{
             <ChanelList handleClick_pvt_text={this.props.handleClick_pvt_text} handleClick={this.props.handleClick}  private_text={this.props.private_text} channels={this.props.channels}/>
             <Newchanel resetList={this.props.resetList}/>
             <ChangePic classname={this.state.change_pic_class} closepic={this.closeChangPic} />
-            <Menu_spand openpic={this.openChangePic} expand_menu={this.expand_menu}logout={this.props.logout}expand_menu={this.expand_menu}class_name={this.state.menu_class} />
+            <Menu_spand resetList={this.props.resetList}openpic={this.openChangePic} expand_menu={this.expand_menu}logout={this.props.logout}expand_menu={this.expand_menu}class_name={this.state.menu_class} />
             </div>
         )
     }

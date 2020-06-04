@@ -168,14 +168,14 @@ class Newchanel extends React.Component{
                 <div id='name-close'>
                     <div></div>
                     <span>New Channel<span style={{'color':'#fafafa','font-weight':'bold'}}>{this.state.chanel_msg}</span></span>
-                    <div id='close' onClick={this.close}><img src={require('./imgs/Icon ionic-ios-close-circle-outline.svg')}/></div>
+                    <div id='close' onClick={this.close}><img src={require('../imgs/Icon ionic-ios-close-circle-outline.svg')}/></div>
                 </div>
             <div id='new-chanel-inputs-cont'>
                 <div id='name-and-img'>
                     <div className='add-img'>
                         <input type='text' onKeyDown={this.keyDown} autoComplete='off' name='name' onChange={this.handleChange} placeholder='Name'/>
                         <div className='icon-cont'>
-                             <img src={require('./imgs/Icon open-pencil.svg')}/>
+                             <img src={require('../imgs/Icon open-pencil.svg')}/>
                         </div>
                     </div>
 
@@ -183,7 +183,7 @@ class Newchanel extends React.Component{
                             <input onChange={this.changeImgN} id='file-input' type="file"/>
                             <span style={{width:'75%'}}>{this.state.img_name}</span>
                             <div className='icon-cont'>
-                            <img src={require('./imgs/Icon material-add-a-photo.svg')}/>
+                            <img src={require('../imgs/Icon material-add-a-photo.svg')}/>
                             </div>
                         </label>
 

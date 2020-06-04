@@ -1,5 +1,5 @@
 import React from "react";
-import Chanels from "./components/Chanels";
+import Chanels from "./components/menu_homepage/Chanels";
 
 
 class ChanelList extends React.Component{

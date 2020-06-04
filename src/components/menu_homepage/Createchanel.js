@@ -15,7 +15,7 @@ createChanel(){
             <div>
                 New channel
             </div>
-            <div id='add-icon'><img src={require('./imgs/Icon ionic-md-add-circle-outline.svg')}/></div>
+            <div id='add-icon'><img src={require('../imgs/Icon ionic-md-add-circle-outline.svg')}/></div>
 
 
         </div>

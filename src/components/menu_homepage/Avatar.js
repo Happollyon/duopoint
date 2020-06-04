@@ -10,7 +10,7 @@ class Avatar extends React.Component
     render() {return(
         <div id='profile-avatar'>
             <div id='avatar-img'>
-                <img src= {localStorage.getItem('url')}/>
+                <img src={localStorage.getItem('url')}/>
             </div>
             <div id='profile-name'>
                 {localStorage.getItem('username')}

@@ -2,7 +2,7 @@ import React from "react";
 import Heading from "./Heading";
 import Wave from "./Wave";
 import Form from "./Form";
-import '../landing.css'
+import '../../landing.css'
 class  Landing extends React.Component{
     constructor(props)
     {
@@ -21,7 +21,7 @@ class  Landing extends React.Component{
             </div>
 
             <div id='img'>
-                <img src={require('./imgs/Group 1.svg')}/>
+                <img src={require('../imgs/Group 1.svg')}/>
             </div>
             </div>
             <Form  conf_psw={this.props.psw} password={this.props.password} conf_psw={this.props.conf_psw} login_call={this.props.login_call} register_call={this.props.register_call} handleChange={this.props.handleChange} msg={this.props.msg}/>

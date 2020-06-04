@@ -13,7 +13,7 @@ class Profile extends React.Component{
     render(){return(
         <div id='profile'>
         <div id='menu-profile-header'>
-         <img onClick={this.props.expand_menu} src={require('./imgs/Icon feather-menu.svg')}/>
+         <img onClick={this.props.expand_menu} src={require('../imgs/Icon feather-menu.svg')}/>
         </div>
         <Avatar user_data={this.props.user_data}/>
         <Lanes/>

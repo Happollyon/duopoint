@@ -58,9 +58,9 @@ class Messenger extends React.Component{
                 <div id='messenger'>
                     <input id='input' type='text'  onKeyDown={this.keyDown} onChange={this.handleText} autoComplete='off'/>
                 <div>
-                    <div onClick={this.sendMsg}><img src={require('./imgs/Icon feather-send.svg')}/></div>
-                    <div><img src={require('./imgs/Icon material-gif.svg')}/></div>
-                    <div><img src={require('./imgs/Icon material-add-a-photo-2.svg')}/></div>
+                    <div onClick={this.sendMsg}><img src={require('../imgs/Icon feather-send.svg')}/></div>
+                    <div><img src={require('../imgs/Icon material-gif.svg')}/></div>
+                    <div><img src={require('../imgs/Icon material-add-a-photo-2.svg')}/></div>
                 </div>
                 </div>
             </div>

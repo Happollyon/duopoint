@@ -12,10 +12,10 @@ class Chanels extends React.Component{
                 <div id='chanel-picture'>
                     <img src={this.props.url}/></div>
                 <div>{this.props.name}</div>
-                <div style={{'margin-left':'1vw'}}><img src={require('./imgs/Icon awesome-bell.svg')}/></div>
+                <div style={{'margin-left':'1vw'}}><img src={require('../imgs/Icon awesome-bell.svg')}/></div>
             </div>
                 <div style={{'margin-right':'1vw','cursor':'pointer'}}>
-                    <img src={require('./imgs/Icon material-delete.svg')}/>
+                    <img src={require('../imgs/Icon material-delete.svg')}/>
                 </div>
             </div>
         );

@@ -4,7 +4,6 @@ import EditAvatar from "./EditAvatar";
 import EditLane from "./EditLane";
 import EditDescription from "./EditDescription";
 import Duo from "./Duo";
-import FindDuo from "./FindDuo";
 import SaveBtm from "./SaveBtm";
 
 class EditProfile extends React.Component
@@ -23,7 +22,7 @@ render() {
         <EditDescription handleChange={this.props.handleChange}/>
         <Duo duo={this.props.duo} toggle={this.props.toggle}/>
         <SaveBtm updateCall={this.props.updateCall}/>
-        <FindDuo/>
+
     </div>
 
 )

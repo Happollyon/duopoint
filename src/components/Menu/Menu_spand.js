@@ -1,5 +1,6 @@
 import React from "react";
-import EditProfile from "./Menu/EditProfile";
+import EditProfile from "./EditProfile";
+import FindDuo from "./FindDuo";
 
 
 class Menu_spand extends React.Component{
@@ -45,27 +46,44 @@ class Menu_spand extends React.Component{
             }
 
              }
+
+
             handleChange(event)
             {
                 let name= event.target.name
                 this.setState({[name]:event.target.value})
             }
+
+
            updateCall()
            {    let checkimage = document.getElementById("file-input-profile").files;
-               if(checkimage[0]==='')
-               {    let img_url= localStorage.getItem('url')
+                  console.log(checkimage)
+               console.log(checkimage[0])
+                 if(document.getElementById("file-input-profile").files.length===0)
+               {   let img_url= localStorage.getItem('url')
+
                    let url='/update/'+this.state.username+'/'+ this.state.duo+'/'+ this.state.elo+'/'+ this.state.lane1+'/'+ this.state.lane2+'/'+ this.state.description+'/'+localStorage.getItem('username')+'/'+ img_url
+
                    fetch(url,{method:'POST'}).then(response=> {
                        if (response.status === 200) {
+
                            response.json().then(response => {
                                alert('all good')
+                               localStorage.setItem('username',this.state.username)
+                               localStorage.setItem('elo',this.state.elo)
+                               localStorage.setItem('lane1',this.state.lane1)
+                               localStorage.setItem('lane2',this.state.lane2)
+                               localStorage.setItem('url',this.state.url)
+                               localStorage.setItem('description',this.state.description)
+                               localStorage.setItem('duo',this.state.duo)
+
                            })
                        } else
                            {
                            alert('nope')
                         }
                    })
-           }else{
+           }else{ alert('x')
                    var files = document.getElementById("file-input-profile").files;
                    var file = files[0]
                    if(file) //if user is uploading image
@@ -89,12 +107,21 @@ class Menu_spand extends React.Component{
                                    fetch(url,{method:'POST'}).then(
                                        response=>{
                                            if(response.status===200)  // if response is 200
-                                           {
+                                           {   alert('1')
+                                               localStorage.setItem('username',this.state.username)
+                                               localStorage.setItem('elo',this.state.elo)
+                                               localStorage.setItem('lane1',this.state.lane1)
+                                               localStorage.setItem('lane2',this.state.lane2)
+                                               localStorage.setItem('url',image_url)
+                                               localStorage.setItem('description',this.state.description)
+                                               localStorage.setItem('duo',this.state.duo)
                                                response.json().then
                                                ( response =>
                                                    {   this.setState({chanel_msg:response.chanel_msg})
+
                                                        if(this.state.chanel_msg==='chanel_created')
                                                        {
+
                                                            this.close()
                                                            return this.props.resetList()
                                                        }
@@ -152,7 +179,8 @@ class Menu_spand extends React.Component{
 
      <div id="menu-spand" className={this.props.class_name}>
          <EditProfile  updateCall={this.updateCall} handleChange={this.handleChange} expand_menu={this.props.expand_menu} openpic={this.props.openpic} duo={this.state.duo} logout={this.props.logout}toggle={this.toggle}/>
-    </div>
+         <FindDuo resetList={this.props.resetList}/>
+     </div>
 
         )
  }

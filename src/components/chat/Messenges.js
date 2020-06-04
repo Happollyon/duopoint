@@ -31,7 +31,9 @@ class Messenges extends React.Component{
                }else {
                 chat=this.props.channel_selected.id
                }
+               let prevChat = 'pvt_msg'+prevProps.channel_selected.id
                socket.off(prevProps.channel_selected.id);
+               socket.off(prevChat)
 
         socket.on(chat,(data)=>
             {    console.log('receives broad cast on:',this.props.channel_selected.id)

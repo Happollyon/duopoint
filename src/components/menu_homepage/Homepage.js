@@ -1,8 +1,9 @@
 import React from "react";
 import io from "socket.io-client";
-import '../homepage.css'
+import '../../homepage.css'
 import Menu from "./Menu";
-import Chat from "./Chat";
+import Chat from "../chat/Chat"
+
 
 
 

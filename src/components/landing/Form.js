@@ -69,7 +69,7 @@ class Form extends React.Component{
                 <div>
                     <input type='text' placeholder='USERNAME' autoComplete='off' name='username' onChange={this.props.handleChange}/>
                     <div id='input-icon-username' >
-                        <img src={this.state.user_msg?require('./imgs/Attention.svg'):require('./imgs/Profile – 2.svg')}/>
+                        <img src={this.state.user_msg?require('../imgs/Attention.svg'):require('../imgs/Profile – 2.svg')}/>
                     </div>
 
                 </div>
@@ -79,7 +79,7 @@ class Form extends React.Component{
                 <div>
                     <input type='password' placeholder='********' autoComplete='off' name='password' onChange={this.props.handleChange}/>
                     <div id='input-icon-username' >
-                        <img src={this.state.psw_msg?require('./imgs/Attention.svg'):require('./imgs/Icon ionic-md-keypad.svg')}/>
+                        <img src={this.state.psw_msg?require('../imgs/Attention.svg'):require('../imgs/Icon ionic-md-keypad.svg')}/>
                     </div>
 
                 </div>
@@ -90,7 +90,7 @@ class Form extends React.Component{
                 <div>
                     <input name='conf_psw' on onKeyDown={this.keyDown_register} onKeyUp={this.match_psw} onChange={this.props.handleChange} type='password' placeholder='********' autoComplete='off'/>
                     <div id='input-icon-username' >
-                        <img src={this.state.conf_psw_msg?require('./imgs/Attention.svg'):require('./imgs/Icon ionic-md-keypad.svg')}/>
+                        <img src={this.state.conf_psw_msg?require('../imgs/Attention.svg'):require('../imgs/Icon ionic-md-keypad.svg')}/>
                     </div>
 
                 </div>
@@ -105,7 +105,7 @@ class Form extends React.Component{
                     <div>
                         <input type='text' placeholder='USERNAME' autoComplete='off' name='username' onChange={this.props.handleChange}/>
                         <div id='input-icon-username' >
-                            <img src={this.state.user_msg?require('./imgs/Attention.svg'):require('./imgs/Profile – 2.svg')}/>
+                            <img src={this.state.user_msg?require('../imgs/Attention.svg'):require('../imgs/Profile – 2.svg')}/>
                         </div>
 
                     </div>
@@ -115,7 +115,7 @@ class Form extends React.Component{
                     <div>
                         <input type='password' onKeyDown={this.keyDown} placeholder='********' name='password' onChange={this.props.handleChange} autoComplete='off'/>
                         <div id='input-icon-username' >
-                            <img src={this.state.psw_msg?require('./imgs/Attention.svg'):require('./imgs/Icon ionic-md-keypad.svg')}/>
+                            <img src={this.state.psw_msg?require('../imgs/Attention.svg'):require('../imgs/Icon ionic-md-keypad.svg')}/>
                         </div>
 
                     </div>
@@ -128,7 +128,7 @@ class Form extends React.Component{
 
             <div id='submit-bt-cont'>
                 <div id='submit-bt' onClick={this.submit_call}>
-                    <img src={require('./imgs/Path 10.svg')}/>
+                    <img src={require('../imgs/Path 10.svg')}/>
                 </div>
                 <span>{this.props.msg}</span>
             </div>

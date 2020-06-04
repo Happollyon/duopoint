@@ -6,9 +6,9 @@ class Lanes extends React.Component{
     }
     render() {return(
         <div id='lanes'>
-            <div>Silver</div>
-            <div>Top</div>
-            <div>Mid</div>
+            <div>{localStorage.getItem('elo')}</div>
+            <div>{localStorage.getItem('lane1')}</div>
+            <div>{localStorage.getItem('lane2')}</div>
         </div>
     )
     }

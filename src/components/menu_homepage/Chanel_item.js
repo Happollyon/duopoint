@@ -18,7 +18,7 @@ render() {return(
             {this.props.name}
         </div>
         <div id="chanel_item_icon">
-            <img src={require('./imgs/Icon ionic-ios-text.svg')}/>
+            <img src={require('../imgs/Icon ionic-ios-text.svg')}/>
         </div>
     </div>
 )

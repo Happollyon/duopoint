@@ -6,9 +6,9 @@ class Heading extends React.Component{
     render(){
         return(
             <div id='heading'>
-                <div><img src={require('./imgs/Icon material-games.svg')}/></div>
+                <div><img src={require('../imgs/Icon material-games.svg')}/></div>
                 <span>DUO POINT</span>
-                <div><img src={require('./imgs/Icon material-games.svg')}/></div>
+                <div><img src={require('../imgs/Icon material-games.svg')}/></div>
             </div>
         )
     }

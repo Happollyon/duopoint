@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Landing from "./components/Landing";
-import Homepage from "./components/Homepage";
+import Landing from "./components/landing/Landing";
+import Homepage from "./components/menu_homepage/Homepage";
 import {
   BrowserRouter as Router,
   Switch,

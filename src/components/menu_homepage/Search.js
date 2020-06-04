@@ -43,7 +43,7 @@ class Search extends React.Component{
             <div id='search' className={this.state.search_class} onClick={this.expand}>
                 <input onChange={this.props.handleChange} onKeyUp={this.props.searchCall} type="text"/>
                 <div id='search-icon'>
-                    <img src={require('./imgs/Icon feather-search.svg')}/>
+                    <img src={require('../imgs/Icon feather-search.svg')}/>
                 </div>
             </div>
         )

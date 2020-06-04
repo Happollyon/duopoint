@@ -6,7 +6,7 @@ class Description extends React.Component{
 
     render() {return(
         <div id='description'>
-            Lorem_ipsum_dolor_sit_amet_consetetur_sadipscing_elitr_sed.
+            {localStorage.getItem('description')}
 
         </div>
     )
