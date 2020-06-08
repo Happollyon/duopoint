@@ -34,7 +34,7 @@ class FindDuo extends React.Component{
         else {
             console.log('test')
             console.log(this.props.search_user_results)
-            let url='/addfriend/' + this.state.duo_result[index].id + '/' + localStorage.getItem('user_id')
+            let url='/backend/addfriend/' + this.state.duo_result[index].id + '/' + localStorage.getItem('user_id')
             fetch(url,{method:'POST'}).then(response=>{
                 if(response.status===200)
                 {
@@ -47,7 +47,7 @@ class FindDuo extends React.Component{
     }
     findDuo()
     {
-        let url='/findduo/'+this.state.find_elo+'/'+this.state.find_lane1+'/'+this.state.find_lane2+'/'+localStorage.getItem('username')
+        let url='/backend/findduo/'+this.state.find_elo+'/'+this.state.find_lane1+'/'+this.state.find_lane2+'/'+localStorage.getItem('username')
         fetch(url,{method:'POST'}).then(response=>{if(response.status===200)
         {
             response.json().then(response=>{

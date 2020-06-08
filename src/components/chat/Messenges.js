@@ -59,10 +59,10 @@ class Messenges extends React.Component{
         return(
         <div id='messenges-cont'>
 
-            {this.props.msg_feed.map((msg_feed,index)=> <Msg  scroll={this.scroll} key={index} name={msg_feed.username}avatar_url={msg_feed.url} text={msg_feed.text}/>
+            {this.props.msg_feed.map((msg_feed,index)=> <Msg  scroll={this.scroll} key={index} name={msg_feed.username}avatar_url={msg_feed.url} msg_url={msg_feed.url_img} text={msg_feed.text}/>
             )}
 
-            {this.state.msg_body.map((msg_feed,index)=><Msg scroll={this.scroll} key={index} name={msg_feed.user_details[0].username} text={msg_feed.msg} avatar_url={msg_feed.user_details[0].url}/>)}
+            {this.state.msg_body.map((msg_feed,index)=><Msg scroll={this.scroll} key={index} name={msg_feed.user_details[0].username} msg_url={msg_feed.url_msg} text={msg_feed.msg} avatar_url={msg_feed.user_details[0].url}/>)}
 
             </div>
     )

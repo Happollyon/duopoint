@@ -48,7 +48,7 @@ class Newchanel extends React.Component{
 
         if(file) //if user is uploading image
         {
-            let url = '/uploadimage/'+file.name+'/'+file.type
+            let url = '/backend/uploadimage/'+file.name+'/'+file.type
             fetch(url, {
                 method: 'POST',
             }).then(response=>{if(response.status===200)
@@ -69,7 +69,7 @@ class Newchanel extends React.Component{
                     }else{
                         var description= this.state.description
                     }
-                    let url = '/createchanel/'+this.state.name+'/'+ description+'/'+username +'/'+ image_url
+                    let url = '/backend/createchanel/'+this.state.name+'/'+ description+'/'+username +'/'+ image_url
                     fetch(url,{method:'POST'}).then(
                         response=>{
                             if(response.status===200)  // if response is 200
@@ -111,7 +111,7 @@ class Newchanel extends React.Component{
             }else{
                 var description= this.state.description
             }
-            let url = '/createchanel/'+this.state.name+'/'+ description+'/'+username +'/'+ image_url
+            let url = '/backend/createchanel/'+this.state.name+'/'+ description+'/'+username +'/'+ image_url
             fetch(url,{method:'POST'}).then(response=>{
                 if (response.status===200)
                 {

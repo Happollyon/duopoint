@@ -18,13 +18,16 @@ class Msg extends React.Component
 
         return (
 
-            <div onLoad={this.props.scroll}  id="messenges" style={this.props.name===localStorage.getItem('username')?{'flex-direction':'row-reverse','align-self':'flex-end'}:null} >
+            <div onLoad={this.props.scroll}  id="messenges" style={this.props.name===localStorage.getItem('username')?{'flex-direction':'row-reverse','align-self':'flex-end'}:null } >
                 <div id="msg-avatar">
                     <img src={this.props.avatar_url}/>
                 </div>
                 <div id="msg-body">
                     <div id="msg-text">
                         {this.props.text}
+                    </div>
+                    <div id='msg-img'>
+                        <img src={this.props.msg_url}/>
                     </div>
                     <div id="msg-date">
                         4th may 19 - 9:23

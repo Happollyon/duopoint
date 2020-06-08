@@ -17,6 +17,7 @@ class Menu extends React.Component{
         this.openChangePic=this.openChangePic.bind(this)
         this.expand_menu=this.expand_menu.bind(this)
     }
+
     expand_menu(){
         if(this.state.menu_class===''||this.state.menu_class==='invisible')
         {
@@ -35,14 +36,13 @@ class Menu extends React.Component{
         setTimeout(()=>{document.getElementById('change_pic_cont').style.display='none'},700)
     }
     openChangePic()
-    {   document.getElementById('change_pic_cont').style.display='flex'
-
+    {
+        document.getElementById('change_pic_cont').style.display='flex'
         this.setState({change_pic_class:'visible'})
-
-
     }
     componentDidMount()
-    {
+    { document.getElementById('change_pic_cont').style.display='none'
+
       this.props.resetList()
     }
     render() {return(

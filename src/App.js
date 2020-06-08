@@ -32,7 +32,7 @@ class App extends React.Component{
 
     register_call()
     {
-        let url2= "/register/" +this.state.username +"/"+this.state.password
+        let url2= "/backend/register/" +this.state.username +"/"+this.state.password
         fetch(url2,{method:'POST'}).then(
             response=>{
                 if(response.status ===200)
@@ -48,7 +48,7 @@ class App extends React.Component{
     }
 
     login_call(){
-        let url ="/login/" + this.state.username+"/"+this.state.password
+        let url ="/backend/login/" + this.state.username+"/"+this.state.password
         fetch(url, {method:'POST'}).then(response=>{
             if(response.status===200){
                 response.json().then(response=>{

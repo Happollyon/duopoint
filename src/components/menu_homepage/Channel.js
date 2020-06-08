@@ -18,7 +18,7 @@ class Channel extends React.Component
         this.setState({search:event.target.value})
     }
     search(){
-        let url='/search/'+ this.state.search
+        let url='/backend/search/'+ this.state.search
         fetch(url,{method:'POST'}).then(response=>{ if(response.status===200)
             {
                 response.json().then(response=>{

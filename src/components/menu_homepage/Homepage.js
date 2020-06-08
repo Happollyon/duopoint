@@ -36,7 +36,7 @@ class Homepage extends React.Component{
 
     resetList(){
         let user_id = localStorage.getItem('user_id')
-        let url= '/chanel/'+user_id
+        let url= '/backend/chanel/'+user_id
         fetch( url,{method:'POST'}).then(
             response=> {if (response.status===200)
             {
@@ -55,7 +55,7 @@ class Homepage extends React.Component{
 
         this.setState({channel_selected:this.state.channels[index],private_text_selected:''})
 
-        let url="/msg_feed/"+this.state.channels[index].id
+        let url="/backend/msg_feed/"+this.state.channels[index].id
         fetch(url,{method:'POST'}).then(
             response=>{if(response.status===200)
                 {
@@ -75,7 +75,7 @@ class Homepage extends React.Component{
         this.setState({channel_selected:this.state.private_text[index],private_text_selected:'yes'})
 
 
-        let url="/pvt_msg_feed/"+ this.state.private_text[index].id
+        let url="/backend/pvt_msg_feed/"+ this.state.private_text[index].id
         fetch(url,{method:'POST'}).then(
             response=>{if(response.status===200)
             {

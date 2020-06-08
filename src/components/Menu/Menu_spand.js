@@ -62,7 +62,7 @@ class Menu_spand extends React.Component{
                  if(document.getElementById("file-input-profile").files.length===0)
                {   let img_url= localStorage.getItem('url')
 
-                   let url='/update/'+this.state.username+'/'+ this.state.duo+'/'+ this.state.elo+'/'+ this.state.lane1+'/'+ this.state.lane2+'/'+ this.state.description+'/'+localStorage.getItem('username')+'/'+ img_url
+                   let url='/backend/update/'+this.state.username+'/'+ this.state.duo+'/'+ this.state.elo+'/'+ this.state.lane1+'/'+ this.state.lane2+'/'+ this.state.description+'/'+localStorage.getItem('username')+'/'+ img_url
 
                    fetch(url,{method:'POST'}).then(response=> {
                        if (response.status === 200) {
@@ -88,7 +88,7 @@ class Menu_spand extends React.Component{
                    var file = files[0]
                    if(file) //if user is uploading image
                    {
-                       let url = '/uploadimage/'+file.name+'/'+file.type
+                       let url = '/backend/uploadimage/'+file.name+'/'+file.type
                        fetch(url, {
                            method: 'POST',
                        }).then(response=>{if(response.status===200)
@@ -102,7 +102,7 @@ class Menu_spand extends React.Component{
                                {
                                    let image_url = 'https://duopoint-midia.s3-eu-west-1.amazonaws.com/'+file.name
 
-                                   let url='/update/'+this.state.username+'/'+ this.state.duo+'/'+ this.state.elo+'/'+ this.state.lane1+'/'+ this.state.lane2+'/'+ this.state.description+'/'+localStorage.getItem('username')+'/'+ image_url
+                                   let url='/backend/update/'+this.state.username+'/'+ this.state.duo+'/'+ this.state.elo+'/'+ this.state.lane1+'/'+ this.state.lane2+'/'+ this.state.description+'/'+localStorage.getItem('username')+'/'+ image_url
 
                                    fetch(url,{method:'POST'}).then(
                                        response=>{

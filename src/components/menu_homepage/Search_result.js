@@ -13,7 +13,7 @@ class Search_result extends React.Component{
 
     addChanel(index)
     {
-        let url='/addchanel/' + this.props.search_results[index].id + '/' + localStorage.getItem('user_id')
+        let url='/backend/addchanel/' + this.props.search_results[index].id + '/' + localStorage.getItem('user_id')
         fetch(url,{method:'POST'}).then(response=>{
             if(response.status===200)
             {
@@ -33,7 +33,7 @@ class Search_result extends React.Component{
         else {
             console.log('test')
             console.log(this.props.search_user_results)
-            let url='/addfriend/' + this.props.search_user_results[index].id + '/' + localStorage.getItem('user_id')
+            let url='/backend/addfriend/' + this.props.search_user_results[index].id + '/' + localStorage.getItem('user_id')
             fetch(url,{method:'POST'}).then(response=>{
                 if(response.status===200)
                 {
