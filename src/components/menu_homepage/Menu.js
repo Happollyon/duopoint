@@ -33,7 +33,7 @@ class Menu extends React.Component{
     closeChangPic()
     {
         this.setState({change_pic_class:'invisible'})
-        setTimeout(()=>{document.getElementById('change_pic_cont').style.display='none'},700)
+        setTimeout(()=>{document.getElementById('change_pic_cont').style.display='none'},300)
     }
     openChangePic()
     {

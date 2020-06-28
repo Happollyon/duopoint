@@ -180,6 +180,7 @@ class Menu_spand extends React.Component{
      <div id="menu-spand" className={this.props.class_name}>
          <EditProfile  updateCall={this.updateCall} handleChange={this.handleChange} expand_menu={this.props.expand_menu} openpic={this.props.openpic} duo={this.state.duo} logout={this.props.logout}toggle={this.toggle}/>
          <FindDuo resetList={this.props.resetList}/>
+
      </div>
 
         )

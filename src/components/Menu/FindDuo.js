@@ -1,5 +1,6 @@
 import React from "react";
 import FindResults from "./FindResults";
+import FindBtn from "./FindBtn";
 
 class FindDuo extends React.Component{
     constructor(props) {
@@ -8,11 +9,13 @@ class FindDuo extends React.Component{
             find_elo:'',
             find_lane1:'',
             find_lane2:'',
+            find_results_class:'',
             duo_result:[]
         }
         this.findDuo=this.findDuo.bind(this)
         this.addfriend=this.addfriend.bind(this)
         this.handleChange=this.handleChange.bind(this)
+        this.openFinder=this.openFinder.bind(this)
 
     }
     componentDidMount() {
@@ -55,9 +58,19 @@ class FindDuo extends React.Component{
             })
         }})
     }
+    openFinder(){
+        document.getElementById('find_btn2').style.display='none';
+        document.getElementById('find-results').style.display='flex';
+        this.setState({find_results_class:'visible'})
+    }
     render() {return(
         <div id="Find_duo">
-            <FindResults addChanel={this.addfriend}duo_result={this.state.duo_result} handleChange={this.handleChange} findDuo={this.findDuo}/>
+            <div id='find_btn2' onClick={this.openFinder}>
+                <div>
+                    Find DUO
+                </div>
+            </div>
+            <FindResults find_results_class={this.state.find_results_class} addChanel={this.addfriend} duo_result={this.state.duo_result} handleChange={this.handleChange} findDuo={this.findDuo}/>
         </div>
     )
     }

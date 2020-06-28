@@ -9,7 +9,7 @@ class Header extends React.Component{
         return (
             <div id="header">
                 <div id='edit_menu_icon' >
-                    <img onClick={this.props.expand_menu} src={require('../imgs/Icon feather-menu.svg')}/>
+                    <img onClick={this.props.expand_menu} src={require('../imgs/Icon feather-menu.svg')} onMouseOver={event => event.target.src=require('../imgs/Icon feather-menu2.svg')} onMouseOut={event => event.target.src=require('../imgs/Icon feather-menu.svg')}/>
                 </div>
                 <div id='logout' onClick={()=>this.props.logout()}>
                     <img src={require('../imgs/Icon open-account-logout.svg')}/>
