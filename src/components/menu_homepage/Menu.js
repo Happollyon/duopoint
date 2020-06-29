@@ -11,12 +11,15 @@ class Menu extends React.Component{
         super(props);
         this.state={
             menu_class:'',
+            menu_tab_class:'',
             change_pic_class:''
         }
         this.closeChangPic=this.closeChangPic.bind(this)
         this.openChangePic=this.openChangePic.bind(this)
         this.expand_menu=this.expand_menu.bind(this)
+
     }
+
 
     expand_menu(){
         if(this.state.menu_class===''||this.state.menu_class==='invisible')

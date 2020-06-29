@@ -3,6 +3,7 @@ import Title from "./Title";
 import Messenges from "./Messenges";
 import Messenger from "./Messenger";
 import GifSearch from "./GifSearch";
+import MenuTab from "./MenuTab";
 
 
 
@@ -30,6 +31,18 @@ class Chat extends React.Component{
         this.changeType=this.changeType.bind(this)
         this.opengiff= this.opengiff.bind(this)
         this.close=this.close.bind(this)
+        this.menu_tab_mobile=this.menu_tab_mobile.bind(this)
+    }
+    menu_tab_mobile()
+    {   let menu = document.getElementById('menu')
+        if(menu.style.display==='none')
+        {
+            menu.style.display='flex'
+        }else
+        {
+            menu.style.display='none'
+        }
+
     }
     componentDidMount() {
         this.giffCall()
@@ -128,6 +141,7 @@ class Chat extends React.Component{
                     <Messenges  private_text_selected={this.props.private_text_selected} msg_feed={this.props.msg_feed} channel_selected={this.props.channel_selected}msg_body={this.state.msg_body}/>
                     <GifSearch close={this.close} giff_class={this.state.giff_class} changeType={this.changeType}handleChange={this.handleChange}  scroll={this.scroll} giffCall={this.giffCall} selectGiff={this.selectGiff} giff={this.state.giff} offset={this.state.offset}/>
                     <Messenger  opengiff={this.opengiff}selected_giff={this.state.selected_giff}private_text_selected={this.props.private_text_selected} name={this.props.channel_selected.name} id={this.props.channel_selected.id} />
+                    <MenuTab menu_tab={this.menu_tab_mobile}/>
                 </div>
 
             )

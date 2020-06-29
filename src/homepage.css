@@ -1499,11 +1499,64 @@ select > option{
     width: 95%;
     height: 70%;
 }
+#menu-tab{
+    display: none;
+    color: #FAFAFA;
+    position: fixed;
+    background: #5E66F2;
+    width: 5vw;
+    height: 7vw;
+    left: 0px;
+    top:30%;
+    z-index: 5;
+    border-radius: 0px 9px 9px 0px;
 
-@media screen and (max-width : 1500px) {
-  #menu
+}
+@media screen and (max-width : 380px) {
+    #menu-tab{
+        display: flex;
+    }
+    #landing-left-cont
+    {
+        display: none;
+    }
+    #form{
+        width: 80%;
+    }#form-heading-options>div
+         {
+            font-size: 5vw  ;
+         }
+     #submit-bt>span{
+         font-size: 4vw;
+     }
+    #wave{
+        height: 100vw;
+    }
+  #menu-spand{
+      width: 90%;
+  }
+    #avatar-img, #edit_avatar_img{
+        height: 8vw;
+        width: 8vw;
+    }
+    #edit_lane>#elo,#lane2,#lane1{
+   font-size: 3vw;
+    }
+    #profile-name,#edit_avatar_username{
+        font-size: 4vw;
+    }
+    #new-chanel{
+        width: 90%;
+        height: 80%;
+    }
+    #menu
   {
       display: none;
+      width: 90vw;
+      position: fixed;
+      z-index: 4;
+      left: 0px;
+      top:0px;
   }
     input[type="text"]
     {
@@ -1520,9 +1573,10 @@ select > option{
         width: 90%;
     }
     #title
-    {  margin: 0px;
+    {   margin: 0px;
         width: 100%;
         font-size: 3vw;
+        border-left: none;
     }
     #members{
         font-size: 3vw;
