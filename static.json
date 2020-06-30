@@ -1,0 +1,10 @@
+{"proxies": {
+"/backend/": {
+"origin": "${API_URL}"
+},
+  "/v1/":  {
+    "origin": "${GIPHY_URL}"
+  }
+}
+
+}
