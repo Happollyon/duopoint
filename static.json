@@ -1,4 +1,9 @@
-{"proxies": {
+{
+
+  "root": "build/",
+  "routes": {
+    "/**": "index.html"
+  },"proxies": {
 "/backend/": {
 "origin": "${API_URL}"
 },
