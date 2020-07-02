@@ -2,7 +2,7 @@ import React from "react";
 import io from "socket.io-client";
 import Msg from "./Msg";
 import CSSTransition from "react-transition-group/cjs/CSSTransition";
-var socket= io('http://localhost:5000/',{forceNew:false})
+var socket= io('https://duopointapi.herokuapp.com/',{forceNew:false})
 
 class Messenges extends React.Component{
     constructor(props) {
