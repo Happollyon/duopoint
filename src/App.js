@@ -2,10 +2,11 @@ import React from 'react';
 import './App.css';
 import Landing from "./components/landing/Landing";
 import Homepage from "./components/menu_homepage/Homepage";
+
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
+  Route,browserHistory,withRouter,
   Link,Redirect
 } from "react-router-dom";
 
@@ -30,6 +31,7 @@ class App extends React.Component{
         this.keepLogged=this.keepLogged.bind(this)
     }
 
+
     register_call()
     {
         let url2= "/backend/register/" +this.state.username +"/"+this.state.password
@@ -47,6 +49,7 @@ class App extends React.Component{
             })
     }
 
+
     login_call(){
         let url ="/backend/login/" + this.state.username+"/"+this.state.password
         fetch(url, {method:'POST'}).then(response=>{
@@ -55,9 +58,10 @@ class App extends React.Component{
 
                     this.setState({
                         msg:response.msg,
-                        user_data:response.user_data
+                        user_data:response.user_data,
+                        logged:'true'
                     })
-                    console.log(this.state.user_data)
+                    console.log(React.version);
                     localStorage.setItem('logged',response.logged)
                     localStorage.setItem('username',this.state.user_data.map(result=>{return   result.username}))
                     localStorage.setItem('url',this.state.user_data.map(result=>{return   result.url}))
@@ -67,6 +71,9 @@ class App extends React.Component{
                     localStorage.setItem('elo',this.state.user_data.map(result=>{return result.elo}))
                     localStorage.setItem('lane1',this.state.user_data.map(result=>{return result.lane1}))
                     localStorage.setItem('lane2',this.state.user_data.map(result=>{return result.lane2}))
+
+                    // reloads the page after data has been updated
+                    document.location.reload(true)
                 })
 
             }else{
@@ -98,7 +105,10 @@ class App extends React.Component{
         this.setState({msg:'',logged:''})
     }
 
+
     render() {
+
+
         return (
             <div id="App">
                 <Router>
@@ -106,7 +116,10 @@ class App extends React.Component{
 
                         <Route exact path="/" render={()=>
                         {
-                            if(this.state.logged==='true'){
+
+                            if(localStorage.getItem('logged'))
+                            {
+
                             return <Redirect to="/homepage"/>
                         }
                             else{
@@ -116,7 +129,7 @@ class App extends React.Component{
 
                         </Route>
 
-                        <Route path="/homepage" render={()=>{
+                        <Route  exact  path="/homepage" render={()=>{
                             if(this.state.logged!=='true')
                             {
                                 return <Redirect to='/'/>

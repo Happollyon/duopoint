@@ -5,7 +5,7 @@ module.exports = function(app) {
 
     ));
     app.use(createProxyMiddleware('/backend/',
-        { target:'https://duopointapi.herokuapp.com/',changeOrigin: true,pathRewrite: {
+        { target:'http://127.0.0.1:5000',changeOrigin: true,pathRewrite: {
                 '^/backend/':'' //remove /service/api
             }}));
 }

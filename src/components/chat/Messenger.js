@@ -44,7 +44,8 @@ class Messenger extends React.Component{
 
     //function to send msg
     sendMsg()
-    {var msg_socket
+    {   var msg_socket
+        var giff_url
 
         // if there is no picture this function is called
         if(document.getElementById('file-input-msg').files.length===0)
@@ -56,8 +57,24 @@ class Messenger extends React.Component{
             }else{
                 msg_socket='msg'
             }
-            socket.emit(msg_socket,{'id': this.props.id,'msg':this.state.msg,url:'none',giff_url:this.props.selected_giff,'user_id':localStorage.getItem('user_id')})
+
+            // checks if user is sending giff or only txt
+            if(this.props.selected_giff===null)
+            {
+                giff_url='none'
+            }
+            else{
+               giff_url=this.props.selected_giff
+            }
+
+            // emmits to server
+            socket.emit(msg_socket,{'id': this.props.id,'msg':this.state.msg,url:'none',giff_url:giff_url,'user_id':localStorage.getItem('user_id')})
+
+            // clears the mesenger input, selected giff and msg
             document.getElementById('input').value=''
+            this.setState({msg:''})
+            this.props.clear_selectedGiff()
+
         }
 
         //if there is a picture this function is called
@@ -81,10 +98,12 @@ class Messenger extends React.Component{
                 }).then(response=>{
 
                     //if data is received
+
                     if(response.status===200){
                     response.json().then(response=>{
                         alert('back from db')
                         //uploads file to s3 if all good emits to database
+
                         if(this.uploadfile(file,response.data))
                         {  alert('file uploaded')
                             let image_url = 'https://duopoint-midia.s3-eu-west-1.amazonaws.com/'+file.name

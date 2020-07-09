@@ -21,13 +21,16 @@ class Chat extends React.Component{
                 type:'stickers',
                 offset:0,
                 gif_search:'league of legends',
-                giff_class:''
+                giff_class:'',
+                selected_giff:''
 
              }
+
         this.giffCall=this.giffCall.bind(this)
         this.handleChange =  this.handleChange.bind(this)
         this.scroll=this.scroll.bind(this)
         this.selectGiff=this.selectGiff.bind(this)
+        this.clear_selectedGiff = this.clear_selectedGiff.bind(this)
         this.changeType=this.changeType.bind(this)
         this.opengiff= this.opengiff.bind(this)
         this.close=this.close.bind(this)
@@ -131,6 +134,10 @@ class Chat extends React.Component{
     {
         this.setState({selected_giff:this.state.giff[index].images.original.url})
     }
+    clear_selectedGiff()
+    {
+        this.setState({selected_giff:''})
+    }
 
 
 
@@ -140,7 +147,7 @@ class Chat extends React.Component{
                     <Title name={this.props.channel_selected.name} url={this.props.channel_selected.url}/>
                     <Messenges  private_text_selected={this.props.private_text_selected} msg_feed={this.props.msg_feed} channel_selected={this.props.channel_selected}msg_body={this.state.msg_body}/>
                     <GifSearch close={this.close} giff_class={this.state.giff_class} changeType={this.changeType}handleChange={this.handleChange}  scroll={this.scroll} giffCall={this.giffCall} selectGiff={this.selectGiff} giff={this.state.giff} offset={this.state.offset}/>
-                    <Messenger  opengiff={this.opengiff}selected_giff={this.state.selected_giff}private_text_selected={this.props.private_text_selected} name={this.props.channel_selected.name} id={this.props.channel_selected.id} />
+                    <Messenger  clear_selectedGiff={this.clear_selectedGiff} opengiff={this.opengiff}selected_giff={this.state.selected_giff}private_text_selected={this.props.private_text_selected} name={this.props.channel_selected.name} id={this.props.channel_selected.id} />
                     <MenuTab menu_tab={this.menu_tab_mobile}/>
                 </div>
 
