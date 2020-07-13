@@ -5,11 +5,11 @@
 App.js
 states: username, user_data , password, conf_password, logged, msg.
 - Landing.js
-	- Form.js
-	- Landing.js
-	- Heading.js
-	- Wave.js
+-- Form.js
+-- Landing.js
+-- Heading.js
+-- Wave.js
 - Homepage.js
-	- Menu.js
-	- Chat.js	
+-- Menu.js
+-- Chat.js	
 	
