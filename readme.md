@@ -28,7 +28,27 @@
 			- Chanels.js
 		- ChangePic.js 
 		- Menu_spand.js
+			- EditProfile.js
+				- Header.js
+				- EditAvatar.js
+				- EditLane.js
+				- EditDescription.js
+				- Duo.js
+				- SaveBtm.js
+			- FinDuo.js
+				- FindResults.js
+					- FindBtn.js
+					- DuoDetails.js
+					- DuoFound.js
+						- Channel_item.js (reused Component.)
+
 
 	- Chat.js	
+		- Messenges.js
+			- Msg.js
+		- Messenger.js
+		- GifSearch.js
+		- MenuTab.js
+		- Title.js
 
 	
