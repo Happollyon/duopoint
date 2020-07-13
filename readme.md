@@ -1,9 +1,10 @@
-##DuoPoint is my final project for the CS50 course
-####Developed By: Fagner Nunes aka Happollyon.
+## DuoPoint is my final project for the CS50 course.
+
+### Developed By: Fagner Nunes aka Happollyon.
 
 
 App.js
-states: username, user_data , password, conf_password, logged, msg.
+
 - Landing.js
 	- Form.js
 	- Landing.js
