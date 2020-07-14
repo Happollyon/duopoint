@@ -1,6 +1,6 @@
 # DuoPoint is my final project for the CS50 course.
 ## Description:
-	I developed this app aiming at League of legends players. League of legends is one of the most famous and competitive games out there.
+I developed this app aiming at League of legends players. League of legends is one of the most famous and competitive games out there.
 This application facilitates that gamers find other players whom are at the same level. Player can create channels, where they can communicate with their friends, share photos and memes.
 The application also allows players to see their friends such as win rate, rank, favorite champions and etc. 
 
