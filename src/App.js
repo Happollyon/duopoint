@@ -41,7 +41,12 @@ class App extends React.Component{
                 {   response.json().then(
                     response=>{
                          this.setState({logged:response.logged})
-                         this.setState({msg:response.msg})}
+                         this.setState({msg:response.msg})
+
+                        // reloads the page after data has been updated
+                        document.location.reload(true)}
+
+
                       )
                 }else{
                     this.setState({msg:'try again'})

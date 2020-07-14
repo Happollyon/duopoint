@@ -23,8 +23,38 @@ class Homepage extends React.Component{
         this.resetList=this.resetList.bind(this)
         this.handleClick =this.handleClick.bind(this)
         this.handleClick_pvt_text= this.handleClick_pvt_text.bind(this)
-    }
+        this.delete_channel=this.delete_channel.bind(this)
+        this.delete_friendship = this.delete_friendship.bind(this)
 
+    }
+    delete_friendship(friendship_id)
+    {
+
+        let user_2 = localStorage.getItem('user_id')
+        let url = '/backend/delete_friendship/'+ friendship_id + '/'+user_2
+        fetch(url, {method:'POST'}).then(response =>{if(response.status === 200)
+        {
+            this.resetList()
+        }else {
+            alert('nope')
+        }})
+    }
+    delete_channel(channel_id)
+    {
+        let user_id = localStorage.getItem('user_id')
+        let channel = channel_id
+        let url = '/backend/delete_channel/'+ user_id +'/'+channel
+        fetch(url, {method:'POST'}).then(response => {if(response.status ===200)
+        {
+            this.resetList()
+        }else
+        {
+            alert('nope')
+        }
+
+        })
+
+    }
       componentWillMount()
         {
             this.resetList()
@@ -95,7 +125,7 @@ class Homepage extends React.Component{
 
         return(
         <div id="homepage">
-            <Menu  handleClick_pvt_text={this.handleClick_pvt_text} handleClick={this.handleClick} private_text={this.state.private_text}channels={this.state.channels} resetList={this.resetList}logout={this.props.logout}user_data={this.props.user_data}/>
+            <Menu  delete_friendship={this.delete_friendship}delete_channel={this.delete_channel} handleClick_pvt_text={this.handleClick_pvt_text} handleClick={this.handleClick} private_text={this.state.private_text}channels={this.state.channels} resetList={this.resetList}logout={this.props.logout}user_data={this.props.user_data}/>
             <Chat private_text_selected={this.state.private_text_selected}msg_feed={this.state.msg_feed} channel_selected={this.state.channel_selected}/>
         </div>
     )

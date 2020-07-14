@@ -52,7 +52,7 @@ class Menu extends React.Component{
             <div id='menu'>
             <Profile expand_menu={this.expand_menu}logout={this.props.logout} user_data={this.props.user_data}/>
             <Channel resetList={this.props.resetList}/>
-            <ChanelList handleClick_pvt_text={this.props.handleClick_pvt_text} handleClick={this.props.handleClick}  private_text={this.props.private_text} channels={this.props.channels}/>
+            <ChanelList  delete_friendship={this.props.delete_friendship}delete_channel={this.props.delete_channel} handleClick_pvt_text={this.props.handleClick_pvt_text} handleClick={this.props.handleClick} private_text={this.props.private_text} channels={this.props.channels}/>
             <Newchanel resetList={this.props.resetList}/>
             <ChangePic classname={this.state.change_pic_class} closepic={this.closeChangPic} />
             <Menu_spand resetList={this.props.resetList}openpic={this.openChangePic} expand_menu={this.expand_menu}logout={this.props.logout}expand_menu={this.expand_menu}class_name={this.state.menu_class} />
