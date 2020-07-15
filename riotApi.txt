@@ -1,0 +1,71 @@
+	# When user click in players picture -> calls api and gets encrypted
+user id ->  https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Happollion
+-> it returns an object which contains :
+{
+    "id": "ypnEOwMG7fMGCHM_hoqq8ga9q8mOwQpR3Wr9pdUEkRkIQFQ",
+    "accountId": "LY_SLSYHYHXmKouOF_2nMAirHg2YMzqE4f8xVcQvMWccNiA",
+    "puuid":
+"NUEemtgPbbK2oxfN6TudU464v7voSNAN1j-d3QmrSg3bL6QNooDGkfBv6-7_m1p9fqQ1tZ1DkqKSgQ",
+    "name": "Happollion",
+    "profileIconId": 4378,
+    "revisionDate": 1594417217000,
+    "summonerLevel": 73
+}
+# use the accountId item to send next request -> https://euw1.api.riotgames.com/lol/match/v4/matchlists/by-account/LY_SLSYHYHXmKouOF_2nMAirHg2YMzqE4f8xVcQvMWccNiA
+-> it returns up to 100 games each containing the following data:
+	"platformId": "EUW1",
+      "gameId": 4701550462,
+      "champion": 99,
+      "queue": 420,
+      "season": 13,
+      "timestamp": 1594415248733,
+      "role": "DUO_SUPPORT",
+      "lane": "BOTTOM"
+# use the game_id to find data about the match it self, by making the
+following request  ->
+https://euw1.api.riotgames.com/lol/match/v4/matches/4701550462:
+ 
+it returns the following:
+{
+"gameId": 4701550462,
+  "platformId": "EUW1",
+  "gameCreation": 1594415248733,
+  "gameDuration": 1911,
+  "queueId": 420,
+  "mapId": 11,
+  "seasonId": 13,
+  "gameVersion": "10.14.327.8505",
+  "gameMode": "CLASSIC",
+  "gameType": "MATCHED_GAME",
+   
+
+  "Teams":{
+	0:{}
+	1:{ 
+	win: win/fail
+}	
+	},
+   "Participants":{
+	0:{
+	champion_id:
+	spell1ID:
+	spell2ID:
+	stats:{
+	item1
+	item2
+	item3
+	item4
+	item6
+	kill
+	deths
+	assits
+	largestmultiplekill
+	wardsplaced
+	champlevel	
+	}
+	}
+
+},
+  "Participants_id":{}
+	
+	

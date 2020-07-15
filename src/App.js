@@ -39,15 +39,29 @@ class App extends React.Component{
             response=>{
                 if(response.status ===200)
                 {   response.json().then(
-                    response=>{
-                         this.setState({logged:response.logged})
-                         this.setState({msg:response.msg})
+                    response=>
+                    {
+                        this.setState({
+                            msg:response.msg,
+                            user_data:response.user_data,
+                            logged:'true'
+                        })
+                        console.log(React.version);
+                        localStorage.setItem('logged',response.logged)
+                        localStorage.setItem('username',this.state.user_data.map(result=>{return   result.username}))
+                        localStorage.setItem('url',this.state.user_data.map(result=>{return   result.url}))
+                        localStorage.setItem('user_id',this.state.user_data.map(result=>{return result.id}))
+                        localStorage.setItem('description',this.state.user_data.map(result=>{return result.description}))
+                        localStorage.setItem('duo',this.state.user_data.map(result=>{return result.duo}))
+                        localStorage.setItem('elo',this.state.user_data.map(result=>{return result.elo}))
+                        localStorage.setItem('lane1',this.state.user_data.map(result=>{return result.lane1}))
+                        localStorage.setItem('lane2',this.state.user_data.map(result=>{return result.lane2}))
 
                         // reloads the page after data has been updated
-                        document.location.reload(true)}
+                        document.location.reload(true)
 
 
-                      )
+                      })
                 }else{
                     this.setState({msg:'try again'})
                 }
