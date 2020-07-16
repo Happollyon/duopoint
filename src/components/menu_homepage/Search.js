@@ -8,10 +8,28 @@ class Search extends React.Component{
             search_class:'',
 
         }
-
+        this.handleClick = this.handleClick.bind(this);
         this.expand=this.expand.bind(this)
     }
+    componentDidMount()
+    {
+        //every time user clicks it checks where user clicked
+        document.addEventListener('click', this.handleClick);
+    }
+    componentWillUnmount() {
+        document.removeEventListener('click', this.handleClick);
+    }
 
+    // checks if user clicked outside of the search component. If so the component is closed
+    handleClick(e) {
+        if (document.getElementById('search').contains(e.target)||document.getElementById('search-result').contains(e.target)) {
+
+        } else {
+            document.getElementById('search-result').classList.replace('visible','invisible');
+            document.getElementById('create-chanel').style.display='flex';
+            this.setState({search_class:''})
+        }
+    }
     expand()
     {
 
@@ -24,20 +42,8 @@ class Search extends React.Component{
 
 
     }
+
     render() {
-        if(this.state.search_class!=='')
-        {
-            window.addEventListener('click', function(e){
-                if (document.getElementById('search').contains(e.target)||document.getElementById('search-result').contains(e.target))
-                {
-                    // Clicked in box
-                } else{
-                    document.getElementById('search-result').classList.replace('visible','invisible');
-                    document.getElementById('create-chanel').style.display='flex';
-                    this.setState({search_class:''})
-                }
-            }.bind(this));
-        }
 
         return(
             <div id='search' className={this.state.search_class} onClick={this.expand}>

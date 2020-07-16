@@ -46,8 +46,8 @@ class App extends React.Component{
                             user_data:response.user_data,
                             logged:'true'
                         })
-                        console.log(React.version);
-                        localStorage.setItem('logged',response.logged)
+
+
                         localStorage.setItem('username',this.state.user_data.map(result=>{return   result.username}))
                         localStorage.setItem('url',this.state.user_data.map(result=>{return   result.url}))
                         localStorage.setItem('user_id',this.state.user_data.map(result=>{return result.id}))
@@ -56,6 +56,7 @@ class App extends React.Component{
                         localStorage.setItem('elo',this.state.user_data.map(result=>{return result.elo}))
                         localStorage.setItem('lane1',this.state.user_data.map(result=>{return result.lane1}))
                         localStorage.setItem('lane2',this.state.user_data.map(result=>{return result.lane2}))
+                        localStorage.setItem('logged',response.logged)
 
                         // reloads the page after data has been updated
                         document.location.reload(true)
@@ -80,8 +81,7 @@ class App extends React.Component{
                         user_data:response.user_data,
                         logged:'true'
                     })
-                    console.log(React.version);
-                    localStorage.setItem('logged',response.logged)
+
                     localStorage.setItem('username',this.state.user_data.map(result=>{return   result.username}))
                     localStorage.setItem('url',this.state.user_data.map(result=>{return   result.url}))
                     localStorage.setItem('user_id',this.state.user_data.map(result=>{return result.id}))
@@ -90,6 +90,7 @@ class App extends React.Component{
                     localStorage.setItem('elo',this.state.user_data.map(result=>{return result.elo}))
                     localStorage.setItem('lane1',this.state.user_data.map(result=>{return result.lane1}))
                     localStorage.setItem('lane2',this.state.user_data.map(result=>{return result.lane2}))
+                    localStorage.setItem('logged',response.logged)
 
                     // reloads the page after data has been updated
                     document.location.reload(true)

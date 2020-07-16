@@ -70,7 +70,7 @@ class Chat extends React.Component{
         console.log('___________________')
         if(target.scrollHeight-target.scrollTop==(target.offsetHeight))
         {
-            alert('yes')
+
             let offset= this.state.offset
             offset = offset + 25
             this.setState({offset:offset})
