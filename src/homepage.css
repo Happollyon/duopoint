@@ -59,6 +59,18 @@
 
     }
 }
+#root{
+    background: #424242;
+    border: none;
+}
+body{
+    background: #424242;
+    border: none;
+}
+#App{
+    border: none;
+    background: #424242;
+}
 #homepage{
     height: 100vh;
     width: 100vw;
@@ -219,6 +231,360 @@
     cursor: pointer;
     width: 25%;
 }
+/******Player Details***************************/
+#Player_Details_Cont
+{
+    display: none;
+    flex-direction: row;
+    height: 100%;
+    width: 75%;
+    background: rgba(0,0,0,.7);
+    z-index: 3;
+    position:absolute ;
+    top: 0px;
+    align-items: center;
+    justify-content: center;
+
+}
+#Player_Details_Cont.visible
+{    display: flex;
+    animation-name: fade-in-fwd;
+    animation-duration: .7s;
+
+}
+#Player_Details_Data
+{
+    height: 80%;
+    border-radius: 8px;
+    width: 90%;
+    background: #424242;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+
+}
+#Player_Details_Header{
+    height: 5%;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+
+}
+#Player_data{
+    height: 15%;
+    width: 99%;
+
+    display: flex;
+    flex-direction: row;
+
+}
+
+#name_and_avatar{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    border-right: #FAFAFA 1px solid;
+}
+#player_avatar{
+    height: 100%;
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#player_avatar>img
+{
+    height:80px;
+    width: 80px;
+    border-radius: 50%;
+}
+#player_avatar>span{
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    background: #9E9E9E;
+    border-radius: 50%;
+    border: 3px solid #424242;
+    z-index: 2;
+    position: absolute;
+    bottom: 10%;
+    right: 3%;
+    color: #F2CB07;
+
+}
+#username_and_lanes
+{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+#player_username
+{   font-family: 'Libre Baskerville', serif;
+    font-weight: bold;
+    color: #FAFAFA;
+    width: 100%;
+    height: 60%;
+    text-align: center;
+
+}
+#player_lanes
+{   color: #FAFAFA;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    height: 40%;
+}
+#player_stats{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: #FAFAFA;
+    font-family: 'Libre Baskerville', serif;
+}
+#player_elo
+{   width: 25%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+
+}
+#player_description
+{
+    width: 25%;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+#win_rate
+{
+    width: 25%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: bold;
+    align-items: center;
+}
+
+#text_me
+{
+    width: 100%;
+    height: 50%;
+    background: #72F2BC;
+    border-radius: 8px;
+    color: #424242;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+}
+#text_me:hover{
+    background: #14f597;
+}
+#text_me>img
+{
+    height: 20px;
+    width: 20px;
+}
+#text_me_cont
+{   display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 25%;
+}
+
+
+#Player_Games_List
+{
+    height: 70%;
+    width: 99%;
+    border-top:1px #FAFAFA solid ;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+#game{
+    height: 25%;
+    margin-bottom: 10px;
+    min-height: 25%;
+    width: 95%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#champion{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+#spells{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+#spells>img
+{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+}
+#spells>span{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+}
+#spells>span img{
+   height: 100%;
+}
+#runnes{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+#runnes >img{
+    width: 100%;
+}
+#game_stats{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#map{
+    font-weight:bolder;
+    font-size: 22px;
+    font-family: "Open Sans";
+    color: #424242;
+}
+#kill
+{
+    height: 30%;
+    background: #D9435F;
+    font-family: "Open Sans";
+    font-weight: bold;
+    color:#fafafa;
+    width: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+#game_stats_details
+{   width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+#items{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#items > div {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#items > div >span{
+    height: 25px;
+    width: 25px;
+    background: #E0E0E0;
+}
+#items > div >span>img {
+    width: 100%;
+    height: 100%;
+}
+#teams
+{
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+}
+#teams > div{
+    display: flex;
+    width: 48%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+#teams >div>div{
+    height: 18%;
+    width: 100%;
+    display: flex;
+    font-size: 1vw;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+#teams> div>div>div{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+#teams> div>div>span
+{
+    width: 20%;
+}
+#teams> div>div>span>img{
+    width: 100%;
+    height: 100%;
+}
+.divider
+{
+    height: 70%;
+    width: 1px;
+    background: #FAFAFA;
+}
+#game_stats{
+    width: 25%;
+    height: 100%;
+
+}
+
+
+
+/*********GiffS***************************************************/
 #giff-toggle
 {   border-radius: 6px  ;
     display: flex;
@@ -844,6 +1210,7 @@ display: none;
 #msg-avatar>img{
     height: 100%;
     width: 100%;
+    cursor: pointer;
 }
 #msg-body{
     background-image: linear-gradient(#673AB7, #5E66F2);
@@ -881,6 +1248,8 @@ display: none;
     align-self: flex-end;
     margin-right: 1vw;
 }
+
+
 #menu-spand
 {   display: none;
     background:#757575;

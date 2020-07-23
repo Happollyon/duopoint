@@ -20,7 +20,7 @@ class Msg extends React.Component
                                                                 // a ? b : (c ? d : e)
             <div onLoad={this.props.scroll}  id="messenges" style={this.props.name === localStorage.getItem('username')&&this.props.msg_url===''?{'flex-direction':'row-reverse','align-self':'flex-end'}: this.props.name===localStorage.getItem('username')&&this.props.msg_url!==null?{'flex-direction':'row-reverse','align-self':'flex-end','min-height':'60%'}:this.props.name!==localStorage.getItem('username')&&this.props.msg_url!==null?{'min-height':'60%'}:null  } >
                 <div id="msg-avatar">
-                    <img src={this.props.avatar_url}/>
+                    <img  onClick={()=>this.props.show_player_details(this.props.id, this.props.name)} src={this.props.avatar_url}/>
                 </div>
                 <div id="msg-body">
                     <div id="msg-text">

@@ -11,10 +11,6 @@ user id ->  https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Hap
     "revisionDate": 1594417217000,
     "summonerLevel": 73
 }
-#use the key ID to get users complet data by requesting
-->
-https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner/ypnEOwMG7fMGCHM_hoqq8ga9q8mOwQpR3Wr9pdUEkRkIQFQ?api_key=RGAPI-5f245468-e279-40f3-9d19-5e22ab5146f3
-
 # use the accountId item to send next request -> https://euw1.api.riotgames.com/lol/match/v4/matchlists/by-account/LY_SLSYHYHXmKouOF_2nMAirHg2YMzqE4f8xVcQvMWccNiA
 -> it returns up to 100 games each containing the following data:
 	"platformId": "EUW1",

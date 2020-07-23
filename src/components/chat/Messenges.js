@@ -18,11 +18,9 @@ class Messenges extends React.Component{
 
       componentDidUpdate(prevProps,prevState,snapshot)
        {
-           console.log('tried to update')
 
            if(prevProps.channel_selected.id !== this.props.channel_selected.id)
            {
-               console.log('prev ', prevProps.channel_selected.id,' this prop: ',this.props.channel_selected.id)
                this.setState({msg_body:[]})
                var chat
                if(this.props.private_text_selected)
@@ -36,14 +34,14 @@ class Messenges extends React.Component{
                socket.off(prevChat)
 
         socket.on(chat,(data)=>
-            {    console.log('receives broad cast on:',this.props.channel_selected.id)
+            {
 
                 this.setState(prevState => ({
                     msg_body: [...prevState.msg_body, data]
                 }))
 
 
-                console.log('msg body set')
+
             }
         )}
 
@@ -59,10 +57,10 @@ class Messenges extends React.Component{
         return(
         <div id='messenges-cont'>
 
-            {this.props.msg_feed.map((msg_feed,index)=> <Msg  scroll={this.scroll} key={index} name={msg_feed.username}avatar_url={msg_feed.url} msg_url={msg_feed.url_img} text={msg_feed.text}/>
+            {this.props.msg_feed.map((msg_feed,index)=> <Msg  show_player_details={this.props.show_player_details}scroll={this.scroll} key={index} name={msg_feed.username} id={msg_feed.player_id} avatar_url={msg_feed.url} msg_url={msg_feed.url_img} text={msg_feed.text}/>
             )}
 
-            {this.state.msg_body.map((msg_feed,index)=><Msg scroll={this.scroll} key={index} name={msg_feed.user_details[0].username} msg_url={msg_feed.url_msg} text={msg_feed.msg} avatar_url={msg_feed.user_details[0].url}/>)}
+            {this.state.msg_body.map((msg_feed,index)=><Msg show_player_details={this.props.show_player_details} scroll={this.scroll} key={index} name={msg_feed.user_details[0].username} id={msg_feed.user_details[0].player_id} msg_url={msg_feed.url_msg} text={msg_feed.msg} avatar_url={msg_feed.user_details[0].url}/>)}
 
             </div>
     )
