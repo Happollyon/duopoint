@@ -36,8 +36,9 @@ class PlayerGamesList extends React.Component{
                  })
 
                 })
+                this.setState({runes:runes,second_runes:second_runes})
             }
-            this.setState({runes:runes,second_runes:second_runes})
+
         })
         fetch('http://localhost:3000/spell.json',{method:'GET'}).then(response=>{
                 if(response.status===200)
