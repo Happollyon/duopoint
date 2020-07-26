@@ -15,7 +15,7 @@ class PlayerDetails extends React.Component{
     render() {
         return(<div id='Player_Details_Cont' className={this.props.class}>
 
-            {this.props.loading?<Loading/>:<PlayerDetailsData hide={this.props.hide} matches={this.props.matches} riot_data={this.props.riot_data} player_info={this.props.player_info}/>}
+            <PlayerDetailsData hide={this.props.hide} matches={this.props.matches} riot_data={this.props.riot_data} player_info={this.props.player_info}/>
 
         </div>)
     }

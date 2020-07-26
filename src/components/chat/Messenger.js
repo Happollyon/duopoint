@@ -35,10 +35,7 @@ class Messenger extends React.Component{
 
          }
     }
-    clear_img()
-    {
-        this.setState({src:''})
-    }
+
     loadimg(event)
     {
         var image = document.getElementById('file-input-msg');
