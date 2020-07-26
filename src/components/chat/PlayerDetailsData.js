@@ -11,8 +11,9 @@ class PlayerDetailsData extends React.Component{
 
     render() {
         return(<div id='Player_Details_Data'>
+
                 <div id='Player_Details_Header'>
-                    <img src={require('../imgs/Icon ionic-ios-close-circle-outline.svg')} style={{'margin-right':'10px'}}/>
+                    <img onClick={this.props.hide} src={require('../imgs/Icon ionic-ios-close-circle-outline.svg')} style={{'margin-right':'10px'}}/>
                 </div>
                     <PlayerData riot_data={this.props.riot_data} player_info={this.props.player_info}/>
                     <PlayerGamesList matches={this.props.matches} riot_data={this.props.riot_data}/>

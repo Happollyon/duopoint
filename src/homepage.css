@@ -1,3 +1,8 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
 @-webkit-keyframes fade-in-fwd {
     0% {
         -webkit-transform: translateZ(-80px);
@@ -246,6 +251,58 @@ body{
     justify-content: center;
 
 }
+@keyframes loading
+{
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+
+}
+#channel_loading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 22.7%;
+}
+#channel_loading>img{
+    animation: loading 2s infinite linear;
+}
+#msg_loading{
+    height: 85%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#msg_loading >img
+{
+    animation: loading 2s infinite linear;
+}
+#loading{
+    height: 80%;
+    width: 90%;
+    background:#424242;
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+
+
+}
+#loading>img
+{
+    animation: loading 2s infinite linear;
+}
+#Player_Details_Cont.invisible2{
+    animation-name: fade-out-bck;
+    animation-duration: 3s;
+}
 #Player_Details_Cont.visible
 {    display: flex;
     animation-name: fade-in-fwd;
@@ -253,7 +310,7 @@ body{
 
 }
 #Player_Details_Data
-{
+{   position: relative;
     height: 80%;
     border-radius: 8px;
     width: 90%;
@@ -1159,7 +1216,7 @@ display: none;
 /* Track */
 ::-webkit-scrollbar-track {
 
-    border-radius: 10px;
+height: 100%;
 
 }
 
@@ -1977,6 +2034,13 @@ width: 60%;
     {
         width: 100%;
     }
-
+    #Player_Details_Cont{
+        width: 100%;
+        height: 100%;
+    }
+    #Player_Details_Data{
+        width: 100%;
+        height: 98%;
+    }
 }
 

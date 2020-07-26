@@ -6,7 +6,9 @@ class PlayerGamesList extends React.Component{
         super(props);
         this.state={
             champs:{},
-            spells:{}
+            spells:{},
+            runes:{},
+            second_runes:{}
         }
         this.get_champs = this.get_champs.bind(this)
     }
@@ -16,7 +18,27 @@ class PlayerGamesList extends React.Component{
     }
 
     get_champs(){
+        fetch('http://ddragon.leagueoflegends.com/cdn/10.14.1/data/en_US/runesReforged.json',{method:'GET'}).then(response=>{
+            if(response.status===200)
+            {var runes={}
+                var second_runes = {}
+                response.json().then(response=>{
 
+                 response.map(main_rune=>{
+                     let second_rune_id= main_rune.id
+                     let second_rune_icon = 'http://ddragon.leagueoflegends.com/cdn/img/'+main_rune.icon
+                      second_runes[second_rune_id]=second_rune_icon
+                     main_rune.slots[0].runes.map(rune=>{
+                         let rune_id= rune.id
+                         let rune_icon = 'http://ddragon.leagueoflegends.com/cdn/img/'+rune.icon
+                         runes[rune_id] = rune_icon
+                     })
+                 })
+
+                })
+            }
+            this.setState({runes:runes,second_runes:second_runes})
+        })
         fetch('http://localhost:3000/spell.json',{method:'GET'}).then(response=>{
                 if(response.status===200)
             {   var spells={}
@@ -45,6 +67,7 @@ class PlayerGamesList extends React.Component{
 
                       champs[champ_id]=champ_name
 
+
                     })
                 })
                this.setState({champs:champs})
@@ -55,11 +78,12 @@ class PlayerGamesList extends React.Component{
 
         })
 
+
    }
     render() {
         return (
             <div id='Player_Games_List'>
-                {this.props.matches.map((data,key)=><Game spells={this.state.spells} champs={this.state.champs} riot_data={this.props.riot_data} key={key} data={data} />)}
+                {this.props.matches.map((data,key)=><Game second_runes={this.state.second_runes} runes={this.state.runes}spells={this.state.spells} champs={this.state.champs} riot_data={this.props.riot_data} key={key} data={data} />)}
             </div>
         );
     }

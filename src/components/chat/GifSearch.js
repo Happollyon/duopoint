@@ -22,6 +22,7 @@ class GifSearch extends React.Component{
 
         return(
         <div id='giff-search' className={this.props.giff_class}>
+
             <div id="giff-search-cont" className={this.props.giff_class}>
                     <div id="giff-search-close"><div onClick={this.props.close}><img src={require('../imgs/Icon ionic-ios-close-circle-outline.svg')}/></div></div>
                     <div id='giff-search-headding'>

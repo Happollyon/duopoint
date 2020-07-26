@@ -96,7 +96,7 @@ class Game extends React.Component{
 
 
     render() {return(
-        <div id='game' style={this.state.stats.win===false?{"background":"#FF6985"}:{"background":"#72F2BC"}}>
+        <div id='game' style={this.state.stats.win===false?{"background":"rgb(255 108 108)"}:{"background":"rgb(57 243 164)"}}>
             <div id='champion'>
                <div id='spells'>
                    <img src={this.props.champs[this.props.data.champion]}/>
@@ -106,16 +106,17 @@ class Game extends React.Component{
                    </span>
                </div>
                 <div id='runnes'>
-                    <img src={this.props.spells[this.state.player.spell1Id]}/>
-                    <img src={require('../imgs/teemo.jpg')}/>
+                    <img src={this.props.runes[this.state.stats.perk0]}/>
+                    <img src={this.props.second_runes[this.state.stats.perkSubStyle]}/>
                 </div>
             </div>
             <span className='divider'></span>
             <div id='game_stats'>
                 <div id='game_stats_details'>
                     <span>{this.state.duration}min</span>
-                    <span>{this.state.stats.totalMinionsKilled} cs</span>
-                    <span>{this.state.stats.wardsPlaced} wards</span>
+                    <span>{this.state.stats.kills}/{this.state.stats.deaths}/{this.state.stats.assists} </span>
+                    <span>{this.state.stats.totalMinionsKilled} CS</span>
+
                 </div>
                 <div id='map'>
                     {this.state.details.gameMode}

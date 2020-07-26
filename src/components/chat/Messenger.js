@@ -21,6 +21,7 @@ class Messenger extends React.Component{
         this.keyDown = this.keyDown.bind(this)
         this.uploadfile = this.uploadfile.bind(this)
         this.loadimg=this.loadimg.bind(this)
+        this.open_giffs_and_clear_imgSRC =  this.open_giffs_and_clear_imgSRC.bind(this)
 
     }
 
@@ -34,12 +35,16 @@ class Messenger extends React.Component{
 
          }
     }
-
+    clear_img()
+    {
+        this.setState({src:''})
+    }
     loadimg(event)
     {
         var image = document.getElementById('file-input-msg');
         image.src = URL.createObjectURL(event.target.files[0])
         this.setState({src:image.src})
+        this.props.clear_selectedGiff()
     }
 
     //function to send msg
@@ -123,6 +128,14 @@ class Messenger extends React.Component{
 
     }
 
+    open_giffs_and_clear_imgSRC()
+    {
+        this.setState({src:''})
+        this.props.opengiff()
+    }
+
+
+
 
     uploadfile(file,s3Data)
     {
@@ -168,13 +181,13 @@ class Messenger extends React.Component{
                 <div id='messenger'>
                     <input id='input' type='text'  onKeyDown={this.keyDown} onChange={this.handleText} autoComplete='off'/>
                     <div>
-                        <img src={this.props.selected_giff} />
-                        <img src={this.state.src}/>
+                        {this.state.src?null:<img src={this.props.selected_giff} />}
+                        {this.props.selected_giff?null:<img src={this.state.src}/>}
                     </div>
                 <div>
                     <div onClick={this.sendMsg}><img src={require('../imgs/Icon feather-send.svg')}/></div>
 
-                    <div onClick={this.props.opengiff}><img src={require('../imgs/Icon material-gif.svg')}/></div>
+                    <div onClick={this.open_giffs_and_clear_imgSRC}><img src={require('../imgs/Icon material-gif.svg')}/></div>
 
 
                     <div>

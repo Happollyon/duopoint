@@ -22,7 +22,9 @@ class Homepage extends React.Component{
                     player_details_class:'',
                     player_info:[],
                     riot_data:[],
-                    matches:[]
+                    matches:[],
+                    loading:true,
+                    msg_loading:true,
                 }
         this.resetList=this.resetList.bind(this)
         this.handleClick =this.handleClick.bind(this)
@@ -30,6 +32,7 @@ class Homepage extends React.Component{
         this.delete_channel=this.delete_channel.bind(this)
         this.delete_friendship = this.delete_friendship.bind(this)
         this.show_player_details = this.show_player_details.bind(this)
+        this.hide = this.hide.bind(this)
         this.request_player_info = this.request_player_info.bind(this)
         this.riot_call_by_name = this.riot_call_by_name.bind(this)
 
@@ -37,8 +40,13 @@ class Homepage extends React.Component{
     show_player_details(id,name)
     {   this.request_player_info(id)
         this.riot_call_by_name(name)
+
         this.setState({player_details_class:'visible'})
 
+    }
+    hide()
+    {
+        this.setState({player_details_class:'invisible2'})
     }
     riot_call_by_name(player_username)
     {  let url = "/backend/riot_api/"+ player_username
@@ -49,7 +57,7 @@ class Homepage extends React.Component{
             this.setState({riot_data:response.player_details})
             this.setState({matches:response.matches})
 
-
+            this.setState({loading:false})
         })
 
         }else{
@@ -111,6 +119,7 @@ class Homepage extends React.Component{
 
 
     resetList(){
+        this.setState({channel_loading:true})
         let user_id = localStorage.getItem('user_id')
         let url= '/backend/chanel/'+user_id
 
@@ -121,6 +130,7 @@ class Homepage extends React.Component{
                     this.setState({channels:response.channels, private_text:response.private_text})
                     this.setState({channel_selected:this.state.channels[0]})
                     this.handleClick(0)
+                    this.setState({channel_loading:false})
                 })
             }}
         )
@@ -129,7 +139,7 @@ class Homepage extends React.Component{
 
     handleClick(index)
     {
-
+        this.setState({msg_loading:true})
         this.setState({channel_selected:this.state.channels[index],private_text_selected:''})
 
         let url="/backend/msg_feed/"+this.state.channels[index].id
@@ -139,6 +149,7 @@ class Homepage extends React.Component{
                   response.json().then(response=>
                   {
                       this.setState({msg_feed:response.msg_feed})
+                      this.setState({msg_loading:false})
 
                   })
 
@@ -152,7 +163,7 @@ class Homepage extends React.Component{
 
         this.setState({channel_selected:this.state.private_text[index],private_text_selected:'yes'})
 
-
+        this.setState({msg_loading:true})
         let url="/backend/pvt_msg_feed/"+ this.state.private_text[index].id
         fetch(url,{method:'POST'}).then(
             response=>{if(response.status===200)
@@ -160,6 +171,7 @@ class Homepage extends React.Component{
                 response.json().then(response=>
                 {
                     this.setState({msg_feed:response.msg_feed})
+                    this.setState({msg_loading:false})
                 })
 
 
@@ -173,8 +185,8 @@ class Homepage extends React.Component{
 
         return(
         <div id="homepage">
-            <Menu  delete_friendship={this.delete_friendship}delete_channel={this.delete_channel} handleClick_pvt_text={this.handleClick_pvt_text} handleClick={this.handleClick} private_text={this.state.private_text}channels={this.state.channels} resetList={this.resetList}logout={this.props.logout}user_data={this.props.user_data}/>
-            <Chat  matches={this.state.matches} riot_data={this.state.riot_data} player_info={this.state.player_info}player_details_class={this.state.player_details_class}show_player_details={this.show_player_details} private_text_selected={this.state.private_text_selected}msg_feed={this.state.msg_feed} channel_selected={this.state.channel_selected}/>
+            <Menu channel_loading={this.state.channel_loading} delete_friendship={this.delete_friendship}delete_channel={this.delete_channel} handleClick_pvt_text={this.handleClick_pvt_text} handleClick={this.handleClick} private_text={this.state.private_text}channels={this.state.channels} resetList={this.resetList}logout={this.props.logout}user_data={this.props.user_data}/>
+            <Chat msg_loading={this.state.msg_loading}loading={this.state.loading} hide={this.hide} matches={this.state.matches} riot_data={this.state.riot_data} player_info={this.state.player_info}player_details_class={this.state.player_details_class}show_player_details={this.show_player_details} private_text_selected={this.state.private_text_selected}msg_feed={this.state.msg_feed} channel_selected={this.state.channel_selected}/>
         </div>
     )
     }

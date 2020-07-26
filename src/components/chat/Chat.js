@@ -39,6 +39,7 @@ class Chat extends React.Component{
         this.menu_tab_mobile=this.menu_tab_mobile.bind(this)
 
     }
+
     menu_tab_mobile()
     {   let menu = document.getElementById('menu')
         if(menu.style.display==='none')
@@ -67,12 +68,8 @@ class Chat extends React.Component{
     }
     scroll(event)
     {const target = event.target
-        console.log(target.scrollHeight)
-        console.log(target.scrollTop)
-        console.log(target.offsetHeight)
-        console.log('result '+(target.scrollHeight-target.scrollTop) )
-        console.log('___________________')
-        if(target.scrollHeight-target.scrollTop==(target.offsetHeight))
+
+        if(target.offsetHeight+target.scrollTop>=(target.scrollHeight))
         {
 
             let offset= this.state.offset
@@ -148,9 +145,9 @@ class Chat extends React.Component{
 
     render() {return(
                 <div id='chat'>
-                     <PlayerDetails matches={this.props.matches} riot_data={this.props.riot_data} player_info={this.props.player_info} class={this.props.player_details_class} />
+                     <PlayerDetails loading={this.props.loading} hide={this.props.hide} matches={this.props.matches} riot_data={this.props.riot_data} player_info={this.props.player_info} class={this.props.player_details_class} />
                     <Title name={this.props.channel_selected.name} url={this.props.channel_selected.url}/>
-                    <Messenges show_player_details={this.props.show_player_details} private_text_selected={this.props.private_text_selected} msg_feed={this.props.msg_feed} channel_selected={this.props.channel_selected}msg_body={this.state.msg_body}/>
+                    {this.props.msg_loading?(<div id='msg_loading'><img src={require('../imgs/Icon feather-loader.svg')}/></div>):<Messenges show_player_details={this.props.show_player_details} private_text_selected={this.props.private_text_selected} msg_feed={this.props.msg_feed} channel_selected={this.props.channel_selected}msg_body={this.state.msg_body}/>}
                     <GifSearch close={this.close} giff_class={this.state.giff_class} changeType={this.changeType}handleChange={this.handleChange}  scroll={this.scroll} giffCall={this.giffCall} selectGiff={this.selectGiff} giff={this.state.giff} offset={this.state.offset}/>
                     <Messenger  clear_selectedGiff={this.clear_selectedGiff} opengiff={this.opengiff}selected_giff={this.state.selected_giff}private_text_selected={this.props.private_text_selected} name={this.props.channel_selected.name} id={this.props.channel_selected.id} />
                     <MenuTab menu_tab={this.menu_tab_mobile}/>
