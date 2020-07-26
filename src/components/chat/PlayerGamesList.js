@@ -36,6 +36,7 @@ class PlayerGamesList extends React.Component{
                  })
 
                 })
+                console.log(runes, second_runes)
                 this.setState({runes:runes,second_runes:second_runes})
             }
 
