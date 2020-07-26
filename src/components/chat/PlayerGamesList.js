@@ -39,14 +39,14 @@ class PlayerGamesList extends React.Component{
             }
             this.setState({runes:runes,second_runes:second_runes})
         })
-        fetch('http://localhost:3000/spell.json',{method:'GET'}).then(response=>{
+        fetch('https://ddragon.leagueoflegends.com/cdn/10.15.1/data/en_US/summoner.json',{method:'GET'}).then(response=>{
                 if(response.status===200)
             {   var spells={}
                 response.json().then(response=>{
-                    var spell_data = response
+                    var spell_data = response.data
                     Object.keys(spell_data).map(spell=>{
                         let spell_id=spell_data[spell].key
-                        let spell_url = spell_data[spell].icon
+                        let spell_url = 'http://ddragon.leagueoflegends.com/cdn/8.11.1/img/spell/'+spell_data[spell].id+'.png'
                         spells[spell_id]=spell_url
                     })
 
