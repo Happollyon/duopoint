@@ -18,7 +18,7 @@ class PlayerGamesList extends React.Component{
     }
 
     get_champs(){
-        fetch('http://ddragon.leagueoflegends.com/cdn/10.14.1/data/en_US/runesReforged.json',{method:'GET'}).then(response=>{
+        fetch('https://ddragon.leagueoflegends.com/cdn/10.14.1/data/en_US/runesReforged.json',{method:'GET'}).then(response=>{
             if(response.status===200)
             {var runes={}
                 var second_runes = {}
@@ -36,10 +36,8 @@ class PlayerGamesList extends React.Component{
                  })
 
                 })
-                console.log(runes, second_runes)
-                this.setState({runes:runes,second_runes:second_runes})
             }
-
+            this.setState({runes:runes,second_runes:second_runes})
         })
         fetch('http://localhost:3000/spell.json',{method:'GET'}).then(response=>{
                 if(response.status===200)
@@ -56,7 +54,7 @@ class PlayerGamesList extends React.Component{
             }
                 this.setState({spells:spells})
         })
-        fetch('http://ddragon.leagueoflegends.com/cdn/10.14.1/data/en_US/champion.json',{method:'GET'}).then(response=>{
+        fetch('https://ddragon.leagueoflegends.com/cdn/10.14.1/data/en_US/champion.json',{method:'GET'}).then(response=>{
             if(response.status===200)
             {
                 var champs={}
