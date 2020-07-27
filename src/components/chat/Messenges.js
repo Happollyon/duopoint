@@ -2,7 +2,7 @@ import React from "react";
 import io from "socket.io-client";
 import Msg from "./Msg";
 
-var socket= io('https://duopointapi.herokuapp.com:80',{forceNew:false})
+var socket= io('https://duopointapi.herokuapp.com/',{forceNew:false})
 
 class Messenges extends React.Component{
     constructor(props) {
