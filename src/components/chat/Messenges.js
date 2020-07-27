@@ -17,7 +17,7 @@ class Messenges extends React.Component{
 
 
       componentDidUpdate(prevProps,prevState,snapshot)
-       {
+       {    console.log('prev: '+prevProps.channel_selected.id +'this: '+this.props.channel_selected.id)
 
            if(prevProps.channel_selected.id !== this.props.channel_selected.id)
            {
@@ -35,7 +35,7 @@ class Messenges extends React.Component{
 
         socket.on(chat,(data)=>
             {
-
+                console.log('..')
                 this.setState(prevState => ({
                     msg_body: [...prevState.msg_body, data]
                 }))
