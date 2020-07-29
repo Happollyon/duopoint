@@ -8,7 +8,7 @@
 "origin": "${API_URL}"
 },
   "/v1/":  {
-    "origin": "${GIPHY_URL}"
+    "origin": "http://api.giphy.com"
   }
 }
 

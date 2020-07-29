@@ -6,7 +6,7 @@ const number=10;
 //
 
 
-var socket= io('https://duopointapi.herokuapp.com/homepage',{transports:['websocket']})
+var socket= io('https://duopointapi.herokuapp.com/',{transports:['websocket']})
 
 class Messenger extends React.Component{
     constructor(props) {
