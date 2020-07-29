@@ -49,7 +49,7 @@ class Homepage extends React.Component{
         this.setState({player_details_class:'invisible2'})
     }
     riot_call_by_name(player_username)
-    {  let url = "/backend/riot_api/"+ player_username
+    {   let url = "/backend/riot_api/"+ player_username
 
         fetch(url,{method:'POST'}).then(response =>{if(response.status===200)
         { response.json().then
